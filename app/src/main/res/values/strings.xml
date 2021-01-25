@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Basis_MVVM_NoteApp</string>
+    <string name="note_title">Note Title..</string>
+    <string name="add_text">Add Text...</string>
 </resources>
