@@ -13,12 +13,12 @@ data class Note(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name="Note_Id")
     //Column name is given to avoid confusion which may happen when size of app increases
-    val id:Int,
+    var id:Int,
 
     @ColumnInfo(name="Note_Title")
-    val title:String,
+    var title:String, //var so that we can update it later
 
     @ColumnInfo(name="Note_Description")
-    val description:String)
+    var description:String)
 {
 }
