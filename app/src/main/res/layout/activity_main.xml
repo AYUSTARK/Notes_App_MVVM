@@ -1,44 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="myViewModel"
             type="com.example.basis_mvvm_noteapp.NoteViewModel" />
     </data>
-    <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp"
+        android:background="@color/AppBackgroundDark"
         android:orientation="vertical"
+        android:padding="5dp"
         tools:context=".MainActivity">
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="@string/AppNameHeading"
+            android:textColor="@color/headingTextColor"
+            android:textSize="24sp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/noteTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
             android:autofillHints=""
-            android:background="#ECE9E9"
-            android:text="@={myViewModel.inputTitle}"
+            android:background="@color/textBoxBackgroundColor"
             android:ems="10"
             android:hint="@string/note_title"
             android:inputType="textPersonName"
             android:padding="10dp"
+            android:text="@={myViewModel.inputTitle}"
+            android:textColor="@color/headingTextColor"
+            android:textColorHint="@color/headingTextColor"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/noteDescription"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="5dp"
+            android:layout_margin="7dp"
             android:autofillHints=""
-            android:background="#ECE9E9"
-            android:text="@={myViewModel.inputNoteDescription}"
+            android:background="@color/textBoxBackgroundColor"
             android:ems="10"
+            android:gravity="top|start"
             android:hint="@string/add_text"
-            android:inputType="textPersonName"
+            android:inputType="textMultiLine"
             android:padding="10dp"
+            android:scrollbars="vertical"
+            android:text="@={myViewModel.inputNoteDescription}"
+            android:textColor="@color/headingTextColor"
+            android:textColorHint="@color/headingTextColor"
             android:textSize="18sp" />
 
 
@@ -51,7 +71,7 @@
                 android:id="@+id/saveOrUpdateBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:onClick="@{()->myViewModel.saveOrUpdate()}"
                 android:text="@={myViewModel.saveOrUpdateButtonText}" />
 
@@ -59,7 +79,7 @@
                 android:id="@+id/clearAllBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:onClick="@{()->myViewModel.clearAllOrDelete()}"
                 android:text="@={myViewModel.clearAllOrDeleteButtonText}" />
         </LinearLayout>

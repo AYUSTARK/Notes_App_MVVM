@@ -44,7 +44,7 @@ class NoteRecyclerViewAdapter(private val clickListener: (Note)->Unit): Recycler
    class which extends these recycler view adapter class. Hence
    creating a separate class.
    */
-class MyViewHolder(val binding:ListItemBinding):RecyclerView.ViewHolder(binding.root){
+class MyViewHolder(private val binding:ListItemBinding):RecyclerView.ViewHolder(binding.root){
     /*
     Since we are going to use data binding, we need to add the data binding object
     of the list item layout as the constructor parameter

@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.basis_mvvm_noteapp.databinding.ActivityMainBinding
 import com.example.basis_mvvm_noteapp.db.Note
 import com.example.basis_mvvm_noteapp.db.NoteDatabase
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.noteRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.noteRecyclerView.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         //To minimize code inconsistency we will only create only one adapter
         adapter=NoteRecyclerViewAdapter { selectedItem: Note -> listItemClicked(selectedItem) }
         binding.noteRecyclerView.adapter=adapter
