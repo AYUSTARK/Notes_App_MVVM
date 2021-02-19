@@ -47,13 +47,13 @@ interface NoteDAO {
     */
 
     @Update
-    suspend fun updateNote(note:Note)// may return int, ie the number of rows updated
+    suspend fun updateNote(note:Note):Int// may return int, ie the number of rows updated
 
     @Delete
-    suspend fun deleteNote(note:Note)// may return int, ie the number of rows deleted
+    suspend fun deleteNote(note:Note):Int// may return int, ie the number of rows deleted
 
     @Query("DELETE FROM Notes_Data_Table")//Table name given at Note Entity Class
-    suspend fun deleteAll() //These SQL re queries are evaluated at compile time so no issues related to run time SQL problem
+    suspend fun deleteAll():Int //These SQL re queries are evaluated at compile time so no issues related to run time SQL problem
 
     @Query("SELECT * FROM Notes_Data_Table")
     fun getAllNotes():LiveData<List<Note>>

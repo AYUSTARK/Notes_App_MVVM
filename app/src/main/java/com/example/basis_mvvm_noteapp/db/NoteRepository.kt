@@ -13,17 +13,18 @@ class NoteRepository(private val dao: NoteDAO ) {
         we will use coroutines in ViewModel class to execute them but to
         support that we need to define these functions a suspending functions
      */
-    suspend fun insert(note:Note){
-        dao.insertNote(note)
+    suspend fun insert(note:Note):Long{
+        //this function wil return newly inserted row ID
+        return dao.insertNote(note)
     }
-    suspend fun update(note:Note){
-        dao.updateNote(note)
+    suspend fun update(note:Note):Int{
+        return dao.updateNote(note)
     }
-    suspend fun  delete(note:Note){
-        dao.deleteNote(note)
+    suspend fun  delete(note:Note):Int{
+        return dao.deleteNote(note)
     }
-    suspend fun deleteAll(){
-        dao.deleteAll()
+    suspend fun deleteAll():Int{
+        return dao.deleteAll()
     }
 
 
